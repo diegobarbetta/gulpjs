@@ -1,0 +1,27 @@
+@import 'variables';
+
+.overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 998;
+  opacity: 0.8;
+  background-color: $black;
+}
+.modal {
+  display: none;
+  height: 80%;
+  position:absolute;
+  top:-50%;
+  left:50%;
+  z-index: 999;
+  margin:-250px 0 0 -250px;
+  img {
+    height: 100%;
+    border: 8px solid #fff;
+  }
+}
+#modal:target {
+  top:50%;
+}

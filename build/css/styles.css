@@ -1,5 +1,29 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
+.overlay {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 998;
+  opacity: 0.8;
+  background-color: #000; }
+
+.modal {
+  display: none;
+  height: 80%;
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  z-index: 999;
+  margin: -250px 0 0 -250px; }
+  .modal img {
+    height: 100%;
+    border: 8px solid #fff; }
+
+#modal:target {
+  top: 50%; }
+
 body {
   font-family: 'Oswald', sans-serif;
   background-color: #333; }
@@ -7,6 +31,23 @@ body {
 a {
   color: #333; }
 
+.arrows {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../img/arrows.png') no-repeat; }
+
+.arrow-prev {
+  background-position: -32px 0; }
+
+.arrow-prev:hover {
+  background-position: -32px -32px; }
+
+.arrow-next:hover {
+  background-position: 0 -32px; }
+
+.responsive #nav select {
+  display: none; }
 
 @media only screen and (max-width: 767px) {
   .responsive #nav ul {

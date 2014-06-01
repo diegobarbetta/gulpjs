@@ -4,9 +4,12 @@ html
         meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no")
         title= title
         link(rel='stylesheet', href='../css/styles.css', type='text/css')
-        script(type='text/javascript', href='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js')
-        script(type='text/javascript', href='../javascript/script.js')
+        script(src='http://code.jquery.com/jquery-1.9.1.js')
+        script(src='../javascript/script.js')
     body
+        div.overlay
+        div#modal.modal
+            img(src='')
         div.container
             div.header
                 img(src='../img/logo.png')
@@ -28,16 +31,19 @@ html
                 table
                     tr
                         td
-                            img(src='../img/1004422_10152895757840453_491518540_n.jpg')
+                            a(href='#modal', name="../img/1004422_10152895757840453_491518540_n.jpg")
+                                img(src='../img/1004422_10152895757840453_491518540_n.jpg')
                         td
-                            img(src='../img/1005874_10152895767310453_1320882425_n.jpg')
+                            a(href='#modal', name="../img/1005874_10152895767310453_1320882425_n.jpg")
+                                img(src='../img/1005874_10152895767310453_1320882425_n.jpg')
                         td
-                            img(src='../img/1003128_10152895748710453_635130995_n.jpg')
+                            a(href='#modal', name="../img/1003128_10152895748710453_635130995_n.jpg")
+                                img(src='../img/1003128_10152895748710453_635130995_n.jpg')
 
             ul.pagination
                 li
-                    a(href='#') anterior
+                    a(href='#', class='arrows arrow-prev')
                 each val in [1, 2, 3, 4, 5]
                     li= val
                 li
-                    a(href='#') proximo
+                    a(href='#', class='arrows arrow-next')

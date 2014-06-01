@@ -1,26 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Oswald);
 @import url(http://fonts.googleapis.com/css?family=Pacifico);
-
-@mixin table-style {
-  th {
-    text-align: center;
-    font-weight: bold;
-  }
-  td, th {padding: 2px}
-}
-
-@mixin border-radius($radius) {
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  border-radius: $radius;
-}
-
-$white: #fff;
-$grey: #333;
-$blue: #3bbfce;
-$margin: 15px;
-$padding: 10px;
+@import 'variables';
+@import 'modal';
 
 body {
   font-family: 'Oswald', sans-serif;
@@ -31,8 +12,25 @@ a{
   color: $grey;
 }
 
-.overlay {
-  @extend %modal;
+.arrows {
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url('../img/arrows.png') no-repeat;
+}
+
+.arrow-prev {
+  background-position: -32px 0;
+}
+.arrow-prev:hover {
+  background-position: -32px -32px;
+}
+.arrow-next:hover {
+  background-position: 0 -32px;
+}
+
+.responsive #nav select {
+  display: none;
 }
 
 @media only screen and (max-width: 767px) {

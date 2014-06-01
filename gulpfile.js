@@ -8,7 +8,10 @@ var gulp = require('gulp'),
 //tasks
 gulp.task('jade', function() {
     gulp.src('src/jade/**/*.jade')
-        .pipe(jade())
+        .pipe(jade({
+            filename: 'index',
+            pretty: true
+        }))
         .pipe(gulp.dest('build/html/'));
 });
 
@@ -31,24 +34,14 @@ gulp.task('coffee', function() {
         .pipe(coffee({
             bare: true
         }).on('error', gutil.log))
-        .pipe(gulp.dest('build/javascript/'))
+        .pipe(gulp.dest('build/javascript/'));
+    //gulp.run('concat-plugins');
 });
 
-gulp.task('default', function() {
-
-    //watch
-    gulp.task('watch', function() {
-        gulp.watch('src/coffeescript/**/*.coffee', function(event) {
-            gulp.run('coffee');
-        });
-    });
-
-    gulp.task('watch', function() {
-        gulp.watch('src/scss/**/*.scss', function(event) {
-            gulp.run('sass');
-        });
-    });
-
+//watch
+gulp.task('watch', function() {
+    gulp.watch('src/coffeescript/**/*.coffee', ['coffee']);
+    gulp.watch('src/scss/**/*.scss', ['sass']);
 });
 
-//gulp.task('dep', ['jade', 'images', 'sass', 'coffeescript']);
+gulp.task('default', ['jade', 'images', 'sass', 'coffee', 'watch']);

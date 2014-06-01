@@ -1,0 +1,21 @@
+@mixin table-style {
+  th {
+    text-align: center;
+    font-weight: bold;
+  }
+  td, th {padding: 2px}
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+$white: #fff;
+$black: #000;
+$grey: #333;
+$blue: #3bbfce;
+$margin: 15px;
+$padding: 10px;
